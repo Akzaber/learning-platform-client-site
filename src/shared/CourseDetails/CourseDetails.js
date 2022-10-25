@@ -1,5 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { FaFileDownload } from "react-icons/fa";
 
 const CourseDetails = () => {
   const courseDetails = useLoaderData();
@@ -7,8 +8,9 @@ const CourseDetails = () => {
   const { name, title, details, picture } = courseDetails;
   return (
     <div className="card card-compact bg-base-100 shadow-xl p-2">
-      <div>
+      <div className="flex items-center">
         <h2 className="card-title text-2xl font-bold text-left">{title}</h2>
+        <FaFileDownload className="text-2xl cursor-pointer"></FaFileDownload>
       </div>
       <figure>
         <img className="rounded" src={picture} alt="" />

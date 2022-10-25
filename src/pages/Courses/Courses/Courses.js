@@ -1,15 +1,16 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
+import CoursesCard from "../../../shared/CoursesCard/CoursesCard";
 
 const Courses = () => {
+  const courses = useLoaderData();
+  console.log(courses);
+
   return (
     <div>
-      <h1>This is Courses Page!!</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque,
-        repellendus! Deleniti ut temporibus ipsum, laborum distinctio doloremque
-        harum voluptates, sed vel vitae dolores molestiae? Cumque praesentium
-        excepturi quam sint sed?
-      </p>
+      {courses.map((course) => (
+        <CoursesCard key={course._id} course={course}></CoursesCard>
+      ))}
     </div>
   );
 };

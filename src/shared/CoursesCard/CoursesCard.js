@@ -7,7 +7,7 @@ const CoursesCard = ({ course }) => {
   return (
     <div className="card card-compact w-full shadow-sm bg-base-100 hover:shadow-xl mb-5 rounded">
       <figure>
-        <img className="w-full h-[50%]" src={picture} alt="Shoes" />
+        <img className="w-full h-[400px]" src={picture} alt="" />
       </figure>
       <div className="card-body">
         <h2 className="card-title uppercase font-bold">{name}</h2>

@@ -15,12 +15,15 @@ const LeftSideNav = () => {
   return (
     <div className="sticky top-0">
       {categories.map((category) => (
-        <p
-          className="bg-sky-600 p-2 mb-4 rounded cursor-pointer text-white"
+        <Link
+          className="block "
+          to={`/category/${category.id}`}
           key={category.id}
         >
-          <Link to={`/category/${category.id}`}>{category.name}</Link>
-        </p>
+          <button className="bg-sky-600 w-11/12 p-2 mb-6 text-left rounded cursor-pointer text-white">
+            {category.name}
+          </button>
+        </Link>
       ))}
     </div>
   );

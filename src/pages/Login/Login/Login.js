@@ -1,10 +1,13 @@
+import { GoogleAuthProvider } from "firebase/auth";
 import React from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { userLogin } = useContext(AuthContext);
+  const { userLogin, signInWithGoogle } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleUserLogIn = (event) => {
     event.preventDefault();
@@ -18,12 +21,28 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        setError("");
         form.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        setError(error.message);
+      });
+  };
+
+  const handleSignInWithGoogle = () => {
+    const googleProvider = new GoogleAuthProvider();
+
+    signInWithGoogle(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
       })
       .catch((error) => {
         console.error(error);
       });
   };
+
   return (
     <div className="hero">
       <div className="hero-content flex-col w-9/12">
@@ -56,6 +75,9 @@ const Login = () => {
                   className="input input-bordered rounded-xl"
                   required
                 />
+                <label className="label text-red-600">
+                  <p>{error}</p>
+                </label>
                 <label className="label">
                   <p>
                     Don't have an account?{" "}
@@ -76,7 +98,10 @@ const Login = () => {
             </div>
           </form>
           <div className="mt-6 form-control">
-            <button className="rounded-xl py-3 bg-base-300 font-semibold text-black uppercase">
+            <button
+              onClick={handleSignInWithGoogle}
+              className="rounded-xl py-3 bg-base-300 font-semibold text-black uppercase"
+            >
               Continue With Google
             </button>
           </div>

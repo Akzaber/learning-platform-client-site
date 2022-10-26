@@ -1,10 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, userProfile } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,17 +16,29 @@ const Register = () => {
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(name, photoURL, email, password);
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
         console.log(user);
+        setError("");
         form.reset();
+        updateProfile(name, photoURL);
       })
       .catch((error) => {
         console.error(error);
+        setError(error.message);
       });
+  };
+
+  const updateProfile = (name, photoURL) => {
+    const profile = {
+      displayName: name,
+      photoURL: photoURL,
+    };
+    userProfile(profile)
+      .then(() => {})
+      .catch((error) => console.error(error));
   };
   return (
     <div className="hero">
@@ -80,6 +94,9 @@ const Register = () => {
                   className="input input-bordered rounded-xl"
                   required
                 />
+                <label className="label text-red-600">
+                  <p>{error}</p>
+                </label>
                 <label className="label">
                   <p>
                     Already have an account?{" "}

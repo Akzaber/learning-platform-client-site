@@ -18,12 +18,14 @@ const Home = () => {
             scientists deal mostly with software and software systems; this
             includes their theory, design, development, and application.
           </p>
-          <Link
-            to="/courses"
-            className="bg-sky-600 px-4 py-2 rounded text-white"
-          >
-            See The Major Courses of Computer Science
-          </Link>
+          <div className="flex justify-end">
+            <Link
+              to="/courses"
+              className="bg-sky-600 px-4 py-2 rounded text-white uppercase font-semibold"
+            >
+              See The Major Courses of Computer Science
+            </Link>
+          </div>
         </div>
       </div>
     </div>

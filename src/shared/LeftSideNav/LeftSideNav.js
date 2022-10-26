@@ -20,7 +20,7 @@ const LeftSideNav = () => {
           to={`/category/${category.id}`}
           key={category.id}
         >
-          <button className="hover:bg-sky-600 border-solid border-2 border-sky-600 w-11/12 py-3 p-2 mb-6 text-left rounded cursor-pointer hover:text-white text-black font-semibold uppercase">
+          <button className="hover:bg-sky-600 border-solid border-2 border-sky-600 md:w-11/12 w-full py-3 p-2 mb-6 text-left rounded cursor-pointer hover:text-white text-black font-semibold uppercase">
             {category.name}
           </button>
         </Link>

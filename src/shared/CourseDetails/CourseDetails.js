@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaFileDownload } from "react-icons/fa";
 
 const CourseDetails = () => {
@@ -19,7 +19,12 @@ const CourseDetails = () => {
         <h2 className="card-title uppercase font-bold text-2xl">{name}</h2>
         <p className="text-xl">{details}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          <Link
+            to="/premium"
+            className="bg-sky-600 px-4 py-2 rounded uppercase text-white font-semibold"
+          >
+            Get Premium Access
+          </Link>
         </div>
       </div>
     </div>

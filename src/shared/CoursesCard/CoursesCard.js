@@ -11,11 +11,11 @@ const CoursesCard = ({ course }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title uppercase font-bold">{name}</h2>
-        <p>{title}</p>
+        <p className="text-lg">{title}</p>
         <div className="card-actions justify-end">
           <Link
             to={`/course/${course._id}`}
-            className="px-4 py-2 bg-sky-600 text-white rounded"
+            className="px-4 py-2 bg-sky-600 text-white rounded uppercase font-semibold"
           >
             See Details
           </Link>

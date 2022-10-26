@@ -4,10 +4,12 @@ import Blog from "../../pages/Blog/Blog/Blog";
 import Category from "../../pages/Category/Category";
 import Courses from "../../pages/Courses/Courses/Courses";
 import FAQ from "../../pages/FAQ/FAQ/FAQ";
+import GetPremium from "../../pages/Getpremium/GetPremium";
 import Home from "../../pages/Home/Home/Home";
 import Login from "../../pages/Login/Login/Login";
 import Register from "../../pages/Login/Register/Register";
 import CourseDetails from "../../shared/CourseDetails/CourseDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
   {
@@ -50,6 +52,14 @@ export const routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/premium",
+        element: (
+          <PrivateRoute>
+            <GetPremium></GetPremium>
+          </PrivateRoute>
+        ),
       },
     ],
   },

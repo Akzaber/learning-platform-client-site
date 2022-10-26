@@ -19,7 +19,7 @@ const Category = () => {
         <div className="card-actions justify-end">
           <Link
             to={`/course/${course._id}`}
-            className="px-4 py-2 bg-sky-600 text-white rounded font-semibold"
+            className="px-4 py-2 bg-sky-600 text-white rounded uppercase font-semibold"
           >
             See Details
           </Link>

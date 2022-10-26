@@ -1,12 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
 const Register = () => {
   const { createUser, userProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,6 +25,7 @@ const Register = () => {
         setError("");
         form.reset();
         updateProfile(name, photoURL);
+        navigate("/");
       })
       .catch((error) => {
         console.error(error);

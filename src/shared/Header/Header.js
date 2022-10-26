@@ -37,7 +37,7 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex-none">
-        <p className="pr-4">{user?.displayName}</p>
+        <p className="pr-4">{user?.email}</p>
         <Link to="/login">Login</Link>
       </div>
     </div>

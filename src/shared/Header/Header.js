@@ -24,30 +24,30 @@ const Header = () => {
         </div>
         <Link
           to="/"
-          className="lg:text-3xl text-sky-600 uppercase font-extrabold"
+          className="lg:text-3xl text-sky-600 uppercase font-bold lg:font-extrabold"
         >
           Computer <span className="text-black">Science</span>
         </Link>
         <Link
-          className="lg:ml-4 ml-1 font-semibold lg:text-lg hover:text-sky-600 uppercase"
+          className="lg:ml-4 ml-1 lg:font-semibold lg:text-lg hover:text-sky-600 uppercase"
           to="/"
         >
           Home
         </Link>
         <Link
-          className="md:ml-4 ml-1 font-semibold lg:text-lg hover:text-sky-600 uppercase"
+          className="md:ml-4 ml-1 lg:font-semibold lg:text-lg hover:text-sky-600 uppercase"
           to="/courses"
         >
           Courses
         </Link>
         <Link
-          className="md:ml-4 ml-1 font-semibold lg:text-lg hover:text-sky-600 uppercase"
+          className="md:ml-4 ml-1 lg:font-semibold lg:text-lg hover:text-sky-600 uppercase"
           to="/question"
         >
           FAQ
         </Link>
         <Link
-          className="md:ml-4 ml-1 font-semibold lg:text-lg hover:text-sky-600 uppercase"
+          className="md:ml-4 ml-1 lg:font-semibold lg:text-lg hover:text-sky-600 uppercase"
           to="/blog"
         >
           Blog

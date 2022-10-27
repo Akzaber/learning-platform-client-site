@@ -15,10 +15,10 @@ const GetPremium = () => {
         </h1>
         <div className="absolute bottom-20">
           <Link
-            to="/"
+            to="/courses"
             className="px-4 py-2 rounded uppercase bg-sky-600 font-semibold"
           >
-            Back Home
+            Back to courses
           </Link>
         </div>
       </div>

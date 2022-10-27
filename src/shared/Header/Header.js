@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/AuthProvider/AuthProvider";
-import { FaUser } from "react-icons/fa";
+import { FaAlignJustify, FaUser } from "react-icons/fa";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -13,7 +13,7 @@ const Header = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="navbar bg-base-100 drop-shadow-lg rounded mb-6">
+    <div className="navbar bg-base-100 drop-shadow-lg rounded mb-52 md:mb-6">
       <div className="flex-1">
         <div>
           <img
@@ -28,33 +28,56 @@ const Header = () => {
         >
           Computer <span className="text-black">Science</span>
         </Link>
+        <div className="dropdown md:hidden">
+          <label tabIndex={0} className="">
+            <FaAlignJustify className="w-[30px]"></FaAlignJustify>
+          </label>
+          <ul
+            tabIndex={0}
+            className="dropdown-content text-white menu p-1 shadow bg-black rounded w-40 mt-4"
+          >
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/courses">Courses</Link>
+            </li>
+            <li>
+              <Link to="/question">FAQ</Link>
+            </li>
+            <li>
+              <Link to="blog">Blog</Link>
+            </li>
+          </ul>
+        </div>
         <Link
-          className="lg:ml-4 ml-1 lg:font-semibold lg:text-lg hover:text-sky-600 uppercase"
+          className="md:ml-4 md:block hidden md:font-semibold text-lg hover:text-sky-600 uppercase"
           to="/"
         >
           Home
         </Link>
         <Link
-          className="md:ml-4 ml-1 lg:font-semibold lg:text-lg hover:text-sky-600 uppercase"
+          className="md:ml-4 md:block hidden ml-2 md:font-semibold md:text-lg hover:text-sky-600 uppercase"
           to="/courses"
         >
           Courses
         </Link>
         <Link
-          className="md:ml-4 ml-1 lg:font-semibold lg:text-lg hover:text-sky-600 uppercase"
+          className="md:ml-4 md:block hidden ml-2 lg:font-semibold md:text-lg hover:text-sky-600 uppercase"
           to="/question"
         >
           FAQ
         </Link>
         <Link
-          className="md:ml-4 ml-1 lg:font-semibold lg:text-lg hover:text-sky-600 uppercase"
+          className="md:ml-4 md:block hidden ml-1 md:font-semibold md:text-lg hover:text-sky-600 
+          uppercase"
           to="/blog"
         >
           Blog
         </Link>
       </div>
       <div className="flex-none">
-        <label className="swap swap-rotate mr-2">
+        <label className="swap swap-rotate md:mr-2 mr-1">
           <input type="checkbox" />
 
           <svg
@@ -88,21 +111,21 @@ const Header = () => {
           </>
         ) : (
           <>
-            <FaUser className="mr-2 text-xl"></FaUser>
+            <FaUser className="md:mr-2 mr-1 text-xl"></FaUser>
           </>
         )}
         {user?.uid ? (
           <>
             <button
               onClick={handleLogOut}
-              className="bg-black text-white rounded px-3 py-2 pr-2 uppercase"
+              className="bg-black text-white rounded px-3 py-2 uppercase"
             >
               Log Out
             </button>
           </>
         ) : (
           <>
-            <button className="bg-sky-600 text-white rounded px-3 py-2 mr-2 uppercase">
+            <button className="bg-sky-600 text-white rounded px-3 py-2 mr-2  uppercase">
               <Link to="/login">Login</Link>
             </button>
             <button className="bg-black text-white rounded px-3 py-2 uppercase">

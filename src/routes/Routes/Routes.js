@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Link } from "react-router-dom";
 import Main from "../../layouts/Main";
 import Blog from "../../pages/Blog/Blog/Blog";
 import Category from "../../pages/Category/Category";
@@ -62,5 +62,31 @@ export const routes = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "*",
+    element: (
+      <>
+        <div className="hero min-h-screen bg-red-900">
+          <div className="hero-content text-center text-white">
+            <div className="max-w-md">
+              <h1 className="text-4xl font-bold uppercase">404</h1>
+              <h1 className="text-2xl font-extrabold uppercase">
+                You're looking a little lost!
+              </h1>
+              <p className="py-4 text-md">
+                Unfortunately the page you are looking for can not be found....{" "}
+              </p>
+              <Link
+                to="/"
+                className="bg-sky-600 font-semibold text-white px-4 py-2 rounded uppercase"
+              >
+                Back to Homepage
+              </Link>
+            </div>
+          </div>
+        </div>
+      </>
+    ),
   },
 ]);

@@ -6,13 +6,13 @@ const Home = () => {
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col ">
         <img
-          src="https://thumbs.dreamstime.com/b/vector-line-web-concept-computer-science-horizontal-banner-education-82810778.jpg"
+          src="https://img.freepik.com/free-vector/illustration-social-media-concept_53876-18146.jpg?size=626&ext=jpg"
           className="w-full rounded shadow-2xl"
           alt=""
         />
         <div>
-          <h1 className="text-5xl font-bold uppercase">Computer Science</h1>
-          <p className="py-6">
+          <h1 className="text-4xl font-bold uppercase">Computer Science</h1>
+          <p className="py-6 text-lg">
             Computer Science is the study of computers and computational
             systems. Unlike electrical and computer engineers, computer
             scientists deal mostly with software and software systems; this

@@ -16,7 +16,7 @@ const LeftSideNav = () => {
     <div className="sticky top-0">
       {categories.map((category) => (
         <Link
-          className="block "
+          className="block"
           to={`/category/${category.id}`}
           key={category.id}
         >

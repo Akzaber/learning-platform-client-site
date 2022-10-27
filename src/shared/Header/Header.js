@@ -29,7 +29,7 @@ const Header = () => {
           Computer <span className="text-black">Science</span>
         </Link>
         <div className="dropdown md:hidden">
-          <label tabIndex={0} className="">
+          <label tabIndex={0} className="cursor-pointer">
             <FaAlignJustify className="w-[30px]"></FaAlignJustify>
           </label>
           <ul

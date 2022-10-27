@@ -23,19 +23,24 @@ export const routes = createBrowserRouter([
       {
         path: "/courses",
         element: <Courses></Courses>,
-        loader: () => fetch("http://localhost:5000/courses"),
+        loader: () =>
+          fetch("https://assignment-10-data-server-akzaber.vercel.app/courses"),
       },
       {
         path: "/category/:id",
         element: <Category></Category>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(
+            `https://assignment-10-data-server-akzaber.vercel.app/category/${params.id}`
+          ),
       },
       {
         path: "/course/:id",
         element: <CourseDetails></CourseDetails>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/course/${params.id}`),
+          fetch(
+            `https://assignment-10-data-server-akzaber.vercel.app/course/${params.id}`
+          ),
       },
       {
         path: "/question",

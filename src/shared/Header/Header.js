@@ -95,17 +95,17 @@ const Header = () => {
           <>
             <button
               onClick={handleLogOut}
-              className="bg-black text-white rounded px-3 py-2 pr-2"
+              className="bg-black text-white rounded px-3 py-2 pr-2 uppercase"
             >
               Log Out
             </button>
           </>
         ) : (
           <>
-            <button className="bg-sky-600 text-white rounded px-3 py-2 mr-2">
+            <button className="bg-sky-600 text-white rounded px-3 py-2 mr-2 uppercase">
               <Link to="/login">Login</Link>
             </button>
-            <button className="bg-black text-white rounded px-3 py-2">
+            <button className="bg-black text-white rounded px-3 py-2 uppercase">
               <Link to="/register">Register</Link>
             </button>
           </>

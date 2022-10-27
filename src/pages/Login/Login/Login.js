@@ -1,4 +1,4 @@
-import { GoogleAuthProvider } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 import React from "react";
 import { useState } from "react";
 import { useContext } from "react";
@@ -6,7 +6,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider/AuthProvider";
 
 const Login = () => {
-  const { userLogin, signInWithGoogle } = useContext(AuthContext);
+  const { userLogin, signInWithGoogle, signInWithGithub } =
+    useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
@@ -39,6 +40,20 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider();
 
     signInWithGoogle(googleProvider)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handleGithubSignIn = () => {
+    const githubProvider = new GithubAuthProvider();
+
+    signInWithGithub(githubProvider)
       .then((result) => {
         const user = result.user;
         console.log(user);
@@ -112,7 +127,10 @@ const Login = () => {
             </button>
           </div>
           <div className="form-control mt-6">
-            <button className="w-full rounded-xl py-3 bg-black font-semibold text-white uppercase">
+            <button
+              onClick={handleGithubSignIn}
+              className="w-full rounded-xl py-3 bg-black font-semibold text-white uppercase"
+            >
               Continue With Github
             </button>
           </div>
